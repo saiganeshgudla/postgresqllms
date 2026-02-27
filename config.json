@@ -1,0 +1,72 @@
+{
+  "project": "LMS - Learning Management System",
+  "version": "1.0.0",
+  "description": "A modular Learning Management System built with FastAPI backend and Flask frontend",
+  
+  "servers": {
+    "backend": {
+      "framework": "FastAPI",
+      "port": 8000,
+      "host": "localhost",
+      "url": "http://localhost:8000",
+      "docs": "http://localhost:8000/docs",
+      "redoc": "http://localhost:8000/redoc"
+    },
+    "frontend": {
+      "framework": "Flask",
+      "port": 5000,
+      "host": "localhost",
+      "url": "http://localhost:5000"
+    },
+    "database": {
+      "type": "PostgreSQL",
+      "host": "localhost",
+      "port": 5432,
+      "name": "lms_db",
+      "driver": "psycopg2"
+    }
+  },
+
+  "modules": {
+    "students": {
+      "status": "✅ Active",
+      "description": "Student management module",
+      "endpoints": {
+        "GET /students": "List all students",
+        "POST /students": "Create new student",
+        "GET /students/{id}": "Get student by ID (optional enhancement)",
+        "PUT /students/{id}": "Update student (optional enhancement)",
+        "DELETE /students/{id}": "Delete student (optional enhancement)"
+      }
+    }
+  },
+
+  "planned_features": [
+    "Instructors/Teachers Module",
+    "Courses Management",
+    "Student Enrollments",
+    "Assignments & Projects",
+    "Grades & Grading",
+    "Attendance Tracking",
+    "Notifications System",
+    "User Authentication & Authorization",
+    "Payment Gateway Integration",
+    "Analytics & Reporting"
+  ],
+
+  "tech_stack": {
+    "backend": ["FastAPI", "SQLAlchemy", "Pydantic", "Uvicorn", "psycopg2"],
+    "frontend": ["Flask", "Jinja2", "Bootstrap 5", "Requests", "Werkzeug"],
+    "database": ["PostgreSQL"],
+    "other": ["python-dotenv", "Requests"]
+  },
+
+  "startup_commands": {
+    "windows_batch": "start.bat",
+    "windows_powershell": "start.ps1",
+    "manual_backend": "python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "manual_frontend": "cd frontend && python app.py"
+  },
+
+  "status": "🚀 Development"
+}
